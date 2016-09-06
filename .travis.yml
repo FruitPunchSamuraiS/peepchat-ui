@@ -1,24 +1,25 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-  - npm install phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower
+- bower --version
+- npm install phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: tGXHZMxsAgLQDr2fKxt1LI1CoKr8OuCTq8uOLt/O2cnQbuF7ZuQUEYa8xRFzn7RZlzAGpAIrMEVI2bo9HyPLixeAyQRRsW/hi7/uAFsLZWCG+Hx++xx3I+pTiNkmASNTjJ/ogs/e+BZ6iON+MDqxLfiGFS0QTnuypS3j3j9bJtgW/BYYgSIvw4P8rAwWK3wcCf4MnebihiwN32ZjEqHgJZBYp+dUTrce8zXMy3aysh/Jsi8SLOdV3hrd70iTrrg0BFsQvtuHx+HToy8Ay9NbDJnvpkV6/3Sh1uYaSPOaRa84C8Z/PKTsbPxM/buw0OZ/SHAnNa2Ns8u4eJhPZa3gPTzDJCvA8x289V/BBQcKVTdl95DLPO9w0C2q4wDcs6qHORKFdGVyL6GF5V5XY3vtpHhrPEmZ40E9TNJB+0bgOLRqkyLMMKcHZ4CsXVlKL4vhFp0tTt/R5lQjbUG2eUGMLoQpsQ2/VaklLtzdTUPGHRk9Af67Yg66NBdl+YtKPEMbfQlc+WesoksjjCoX6RLNtoJTg7vhofETTT+PXnZn0EErApPrgrdbyqnGd5pHi6Y1p/A8GKMbfL6B2yddUntXa/dXXv7ux7fj97WiSL2MZAHkVDVOhSOjzVS/LPILy3Ye6kLobOq55NdbBbROn7/5sLqzM++CGp6WMsZm9dHDQBM=
+  app: blooming-taiga-92393
+  on:
+    repo: FruitPunchSamuraiS/peepchat-ui
