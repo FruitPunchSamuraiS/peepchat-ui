@@ -13,6 +13,17 @@ module.exports = function(environment) {
       }
     },
 
+    DS: {
+      host: 'http://localhost:4000',
+      namespace: 'api'
+    },
+
+    'ember-simple-auth': {
+       authenticationRoute: 'auth.login',
+       routeIfAlreadyAuthenticated: 'app.index',
+       routeAfterAuthentication: 'app.index'
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -39,7 +50,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.DS.host = 'https://evening-anchorage-10217.herokuapp.com';
   }
 
   return ENV;
