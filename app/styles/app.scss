@@ -2,7 +2,7 @@ $roboto-font-path: '/assets/';
 @import "materialize";
 
 body {
-  background-color: color('indigo', 'darken-2');
+  background-color:#01083c;
 }
 
 .toasts {
@@ -38,4 +38,12 @@ body {
       margin-top: -40px;
     }
   }
+
+   .create-room {
+	  .col {
+	    .btn-flat {
+	      margin-top: 1.5rem;
+	    }
+	  }
+	}
 }
